@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import './popupProfile.css';
 import fun from '../asset/fun.jpg';
 

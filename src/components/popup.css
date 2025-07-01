@@ -1,0 +1,33 @@
+.popOpen {
+    background: white;
+    width: 250px;
+    height: 80vh;
+    overflow: hidden;
+    animation: openLeftToRight 0.5s forwards;
+}
+
+@keyframes openLeftToRight {
+    from {
+        width: 0;
+    }
+    to {
+        width: 250px;
+    }
+}
+
+@keyframes openRightToLeft {
+    from {
+        width: 250px;
+    }
+    to {
+        width: 0px;
+    }
+}
+
+.popClose{
+    background: white;
+    width: 250px;
+    height: 80vh;
+    overflow: hidden;
+    animation: openRightToLeft 0.5s forwards;
+}
