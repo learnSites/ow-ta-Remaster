@@ -1,0 +1,13 @@
+.bodyContent{
+    padding: 30px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+    background: #c3c3c3;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+      height: 80vh;
+}
