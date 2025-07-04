@@ -1,0 +1,55 @@
+.siteFooter{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.footerTop{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footerBottom{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    gap: 15px;
+}
+
+h4{
+    margin: 0px;
+}
+
+.footerSection{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 12px;
+}
+
+.inFooterSection{
+    display: flex;
+    gap: 15px;
+}
+
+.linkWord{
+    color: #b9b9b9;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.linkWord:hover{
+    transform: scale(1.02);
+    color: #c9c9c9;
+}
+
+.spliters{
+    color: white;
+    font-weight: 900;
+}
+
+.socialIcon:hover{
+    transform: scale(1.1);
+}
