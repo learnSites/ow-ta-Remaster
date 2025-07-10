@@ -6,7 +6,6 @@
     text-align: center;
     font-weight: bold;
     user-select: none;
-      height: 80vh;
 }
 
 .header {
@@ -16,7 +15,9 @@
   padding: 20px 27px;
   align-items: center;
   user-select: none;
-  box-shadow: 0px 0.2px 10px 0px rgba(0, 0, 0, 0.5);  
+  box-shadow: -1px 7px 10px 0px rgba(0, 0, 0, 0.5);  
+  position: relative;
+  z-index: 999;
 }
 
 .inputFields {
@@ -24,6 +25,9 @@
   border: 1px solid #d4d4d4;
   padding: 5px 10px;
   width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .inputFields:hover,
@@ -32,8 +36,12 @@
   background: #f9f9f9;
   transform: scale(1.02);
   transition: all 0.3s ease;
-  cursor: pointer;
+  cursor: text;
   outline: none;
+}
+
+.inputFields img{
+  cur
 }
 
 .headProfile {
@@ -101,4 +109,24 @@
     flex-wrap: wrap;
     padding: 30px 16px;
     gap: 36px;
+}
+
+.footer{
+  box-shadow: 1px -1px 10px 0px rgba(0, 0, 0, 0.5);  
+  position: sticky;
+}
+
+.headerLogo{
+    width: 5%;
+    border-radius: 50%;
+}
+
+.headerLogo:focus{
+  border: none;
+}
+
+.headerInput{
+  width: 94%;
+  border: none;
+  outline: none;
 }

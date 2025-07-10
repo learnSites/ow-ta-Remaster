@@ -3,18 +3,20 @@ import Popup from "./components/popup";
 import { useState, useEffect, useRef } from "react";
 import Card from "./components/Card";
 import "./app.css";
+import Footer from './components/footer';
+import Banner from './components/banner';
 
 function App() {
   const product = [
-    { Pdtname: "Home Appliances", logo: "/src/asset/Home Appliances.jpg" },
-    { Pdtname: "Computers & Accessories", logo: "/src/asset/computer.jpg" },
-    { Pdtname: "Mens Collection", logo: "/src/asset/mens.jpg" },
-    { Pdtname: "Kids Collection", logo: "/src/asset/kids.jpg" },
-    { Pdtname: "Women Collection", logo: "/src/asset/women.jpg" },
-    { Pdtname: "Smart Home Devices", logo: "/src/asset/smarthome.webp" },
-    { Pdtname: "Entertainment Electronics", logo: "/src/asset/game.jpg" },
-    { Pdtname: " Mobile & Tablets", logo: "/src/asset/mobtab.jpg" },
-    { Pdtname: "Networking & Connectivity", logo: "/src/asset/network.jpg" },
+    { Pdtname: "Home Appliances", logo: "/asset/Home Appliances.jpg" },
+    { Pdtname: "Computers & Accessories", logo: "/asset/computer.jpg" },
+    { Pdtname: "Mens Collection", logo: "/asset/mens.jpg" },
+    { Pdtname: "Kids Collection", logo: "/asset/kids.jpg" },
+    { Pdtname: "Women Collection", logo: "/asset/women.jpg" },
+    { Pdtname: "Smart Home Devices", logo: "/asset/smarthome.webp" },
+    { Pdtname: "Entertainment Electronics", logo: "/asset/game.jpg" },
+    { Pdtname: " Mobile & Tablets", logo: "/asset/mobtab.jpg" },
+    { Pdtname: "Networking & Connectivity", logo: "/asset/network.jpg" },
   ];
   let [open, setOpen] = useState("popClose");
   let pop = useRef(null);
@@ -22,7 +24,10 @@ function App() {
   useEffect(() => {
     function handleOpen(event) {
       if (pop.current && !pop.current.contains(event.target)) {
-        setOpen("popClose");
+        let popupDiv = document.querySelector('.popupDiv');
+        if(!popupDiv.contains(event.target)){
+          setOpen("popClose");
+        }
       }
     }
 
@@ -38,7 +43,7 @@ function App() {
           <div
             ref={pop}
           onClick={() => {
-            setOpen("popOpen");
+            (open == "popOpen") ? setOpen("popClose") :setOpen("popOpen");
           }}
             className="headMenu"
           >
@@ -48,19 +53,26 @@ function App() {
           </div>
         </div>
         <div className="searchDiv">
-          <input className="inputFields" type="text" placeholder="Search" />
+          <div className="inputFields" >
+            <input className="headerInput" type="text" placeholder="Search With OT-WA" />
+            <img className="headerLogo" src="/asset/ow-ta_Logo.png" alt="finding Logo" />
+          </div>
         </div>
         <Profile />
       </div>
       <div className="bodyContent">
-        <div>
+        <div className="popupDiv" >
           <Popup action={open} />
         </div>
         <div className="contentDiv">
+          <Banner />
           {product.map((element, index) => (
             <Card key={index} src={element.logo} name={element.Pdtname} />
           ))}
         </div>
+      </div>
+      <div className="footer">
+          <Footer />
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import './popupProfile.css';
-import fun from '../asset/fun.jpg';
+import fun from '/asset/fun.jpg';
 
 export default function Popup() {
   let [isHover, setHover] = useState(false);
@@ -23,7 +23,7 @@ export default function Popup() {
   return (
     <div
       ref={popupRdf}
-      onClick={() => setClick(true)}
+      onClick={() => (click == true) ? setClick(false) : setClick(true)}
       style={{ position: "relative" }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
